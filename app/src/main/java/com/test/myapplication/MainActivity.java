@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
         mFragmentManager = getSupportFragmentManager();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.setSelectedItemId(0);
+//        navigation.setSelectedItemId(0);
     }
 
     @Override
