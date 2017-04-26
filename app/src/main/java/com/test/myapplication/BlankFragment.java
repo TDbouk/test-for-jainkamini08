@@ -82,7 +82,7 @@ public class BlankFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         ArrayList<String> data = new ArrayList<>();
-        for(int i =0 ; i< 100; i++) {
+        for (int i = 0; i < 100; i++) {
             data.add("Hello World " + i);
         }
         MyAdapter adapter = new MyAdapter(data);

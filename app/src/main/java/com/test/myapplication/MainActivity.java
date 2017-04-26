@@ -24,9 +24,7 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mFragment = new BlankFragment();
-                    mTransaction = mFragmentManager.beginTransaction();
-                    mTransaction.replace(R.id.content, mFragment).commit();
+
                     return true;
                 case R.id.navigation_dashboard:
 
@@ -48,7 +46,19 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
         mFragmentManager = getSupportFragmentManager();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-//        navigation.setSelectedItemId(0);
+
+        // set default selected item
+        navigation.setSelectedItemId(R.id.navigation_dashboard);
+
+        if (findViewById(R.id.detail) != null) {
+            mFragment = new BlankFragment();
+            mTransaction = mFragmentManager.beginTransaction();
+            mTransaction.replace(R.id.detail, mFragment).commit();
+        }
+
+        mFragment = new BlankFragment();
+        mTransaction = mFragmentManager.beginTransaction();
+        mTransaction.replace(R.id.content, mFragment).commit();
     }
 
     @Override
